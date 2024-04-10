@@ -1,16 +1,24 @@
-# This is a sample Python script.
+def main():
+    while True:
+        print("Menu")
+        print("-------------")
+        print("1. Encode")
+        print("2. Decode")
+        print("3. Quit")
+        choice = input("Please enter an option: ")
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+        if choice == '1':
+            password = input("Please enter your password to encode: ")
+            encoded_password = encode(password)
+            print("Your password has been encoded and stored!")
+        elif choice == '2':
+            if 'encoded_password' in locals():
+                print(f"The encoded password is {encoded_password}, and the original password is {decode(encoded_password)}.")
+            else:
+                print("No password encoded yet.")
+        elif choice == '3':
+            break
+        else:
+            print("Invalid option. Please choose again.")
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# Encoder function
